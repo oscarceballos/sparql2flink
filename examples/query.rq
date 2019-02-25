@@ -1,0 +1,8 @@
+#Query : get the names of all persons with their email, if they have it
+
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+SELECT ?person ?name ?mbox
+WHERE {
+	?person foaf:name  ?name .
+	OPTIONAL { ?person  foaf:mbox  ?mbox }
+}
