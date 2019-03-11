@@ -6,14 +6,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="query" />
-        <module name="sparql" />
+        <!-- <module name="query" /> -->
+        <!-- <module name="sparql" /> -->
         <module name="sparql2flink" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="query" target="1.8" />
-      <module name="sparql" target="1.8" />
+      <!-- <module name="query" target="1.8" /> -->
+      <!-- <module name="sparql" target="1.8" /> -->
       <module name="sparql2flink" target="1.8" />
     </bytecodeTargetLevel>
   </component>
