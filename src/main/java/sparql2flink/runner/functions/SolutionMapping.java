@@ -18,6 +18,10 @@ public class SolutionMapping {
 		this.mapping = sm;
 	}
 
+    public void setMapping(HashMap<String, Node> mapping){
+        this.mapping = mapping;
+    }
+
 	public HashMap<String, Node> getMapping(){
 		return mapping;
 	}
@@ -29,6 +33,10 @@ public class SolutionMapping {
 	public Node getValue(String var){
 		return mapping.get(var);
 	}
+
+    //public <T> T callFriend(String name){
+    //    return (T) mapping.get(name).getLiteralValue();
+    //}
 
 	public boolean existMapping(String var, Node val){
 		Boolean flag = false;

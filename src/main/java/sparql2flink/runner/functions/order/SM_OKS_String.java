@@ -14,10 +14,11 @@ public class SM_OKS_String implements KeySelector<SolutionMapping, String> {
 
 	@Override
 	public String getKey(SolutionMapping sm) {
-	    String value ="";
-		if(sm.getMapping().get(key).isLiteral()) {
-            value = sm.getMapping().get(key).getLiteralValue().toString();
-        }else if(sm.getMapping().get(key).isURI()){
+	    String value = "";
+		//if(sm.getMapping().get(key).isLiteral()) {
+            //value = sm.getMapping().get(key).getLiteralValue().toString();
+        //}else
+        if(sm.getMapping().get(key).isURI()){
             value = sm.getMapping().get(key).toString();
         }
         return value;
