@@ -13,12 +13,6 @@ import sparql2flink.runner.functions.order.*;
 public class Query {
 	public static void main(String[] args) throws Exception {
 
-		final ParameterTool params = ParameterTool.fromArgs(args);
-
-		if (!params.has("dataset") && !params.has("output")) {
-			System.out.println("Use --dataset to specify dataset path and use --output to specify output path.");
-		}
-
 		//************ Environment (DataSet) and Source (static RDF dataset) ************
 		final ExecutionEnvironment env = ExecutionEnvironment.getExecutionEnvironment();
 		DataSet<Triple> dataset = LoadTransformTriples.loadTriplesFromDataset(env, "./data/dataset20mb.nt");
@@ -44,5 +38,6 @@ public class Query {
 			.setParallelism(1);
 
 		env.execute("SPARQL Query to Flink Programan - DataSet API");
+
 	}
 }
