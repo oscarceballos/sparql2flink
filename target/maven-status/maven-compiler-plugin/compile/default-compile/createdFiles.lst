@@ -4,6 +4,7 @@ sparql2flink/runner/functions/order/SM_OKS_Float.class
 sparql2flink/mapper/JoinKeys.class
 sparql2flink/runner/functions/SM2SM_FF.class
 sparql2flink/mapper/ConvertTriplePattern2.class
+sparql2flink/runner/functions/order/SM_OKS.class
 sparql2flink/runner/functions/order/SM_OKS_Double.class
 sparql2flink/runner/functions/SM_JKS.class
 Sparql2Flink.class
@@ -28,6 +29,7 @@ sparql2flink/runner/functions/filter/GreaterThanOrEqual.class
 sparql2flink/mapper/ConvertTriplePatternGroup.class
 sparql2flink/mapper/LoadSQFile.class
 sparql2flink/mapper/SolutionMapping.class
+sparql2flink/runner/functions/DS2SM_MF.class
 sparql2flink/runner/LoadTransformTriples.class
 sparql2flink/mapper/FilterConvert.class
 sparql2flink/runner/functions/filter/LessThanOrEqual.class

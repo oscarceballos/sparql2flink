@@ -8,8 +8,8 @@ public class SM_OKS implements KeySelector<SolutionMapping, String> {
 
 	private String key;
 
-	public SM_OKS(String k) {
-		this.key = k;
+	public SM_OKS(String key) {
+		this.key = key;
 	}
 
 	@Override
@@ -20,7 +20,6 @@ public class SM_OKS implements KeySelector<SolutionMapping, String> {
         }else if(sm.getMapping().get(key).isURI()){
             value = sm.getMapping().get(key).toString();
         }
-        System.out.println("VALUE: "+value);
         return value;
 	}
 }

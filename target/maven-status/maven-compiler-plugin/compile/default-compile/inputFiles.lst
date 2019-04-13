@@ -13,6 +13,7 @@
 /Users/oscar/myapps/sparql2flink/src/main/java/sparql2flink/mapper/CreateFPFile.java
 /Users/oscar/myapps/sparql2flink/src/main/java/sparql2flink/runner/functions/order/SM_OKS_Integer.java
 /Users/oscar/myapps/sparql2flink/src/main/java/sparql2flink/mapper/TransformLQP2FP.java
+/Users/oscar/myapps/sparql2flink/src/main/java/sparql2flink/runner/functions/DS2SM_MF.java
 /Users/oscar/myapps/sparql2flink/src/main/java/sparql2flink/mapper/ConvertLQP2FP.java
 /Users/oscar/myapps/sparql2flink/src/main/java/sparql2flink/mapper/ConvertTriplePattern.java
 /Users/oscar/myapps/sparql2flink/src/main/java/sparql2flink/runner/functions/filter/Equals.java
@@ -30,6 +31,7 @@
 /Users/oscar/myapps/sparql2flink/src/main/java/sparql2flink/mapper/FilterConvert.java
 /Users/oscar/myapps/sparql2flink/src/main/java/sparql2flink/runner/functions/SM_JKS.java
 /Users/oscar/myapps/sparql2flink/src/main/java/sparql2flink/mapper/ConvertTriplePatternGroup.java
+/Users/oscar/myapps/sparql2flink/src/main/java/sparql2flink/runner/functions/order/SM_OKS.java
 /Users/oscar/myapps/sparql2flink/src/main/java/sparql2flink/runner/functions/SM2SM_FF.java
 /Users/oscar/myapps/sparql2flink/src/main/java/sparql2flink/runner/functions/SM2SM_PF.java
 /Users/oscar/myapps/sparql2flink/src/main/java/sparql2flink/runner/functions/SM_DKS.java

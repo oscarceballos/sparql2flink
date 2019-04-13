@@ -197,7 +197,12 @@ public class ConvertLQP2FP extends OpVisitorBase {
 
         Expr expression = sortCondition.get(0).getExpression();
 
-        fp += "\t\tDataSet<SolutionMapping> sm"+SolutionMapping.getIndice()+";\n" +
+        fp += "\t\tDataSet<SolutionMapping> sm"+SolutionMapping.getIndice()+" = sm"+(SolutionMapping.getIndice()-1)+"\n" +
+                "\t\t\t\t\t.sortPartition(new SM_OKS(\""+expression+"\"), "+order+")\n" +
+                "\t\t\t\t\t.setParallelism(1);\n" +
+                "\t\n";
+
+        /*fp += "\t\tDataSet<SolutionMapping> sm"+SolutionMapping.getIndice()+";\n" +
                 "\t\tNode node = sm"+(SolutionMapping.getIndice()-1)+".collect().get(0).getValue(\""+expression+"\");\n" +
                 "\t\tif(node.isLiteral()) {\n" +
                 "\t\t\tif(node.getLiteralValue().getClass().equals(BigDecimal.class) || node.getLiteralValue().getClass().equals(Double.class)){\n" +
@@ -225,7 +230,7 @@ public class ConvertLQP2FP extends OpVisitorBase {
                 "\t\t\t\tsm"+SolutionMapping.getIndice()+" = sm"+(SolutionMapping.getIndice()-1)+"\n" +
                 "\t\t\t\t\t.sortPartition(new SM_OKS_String(\""+expression+"\"), "+order+")\n" +
                 "\t\t\t\t\t.setParallelism(1);\n" +
-                "\t\t}\n\n";
+                "\t\t}\n\n";*/
 
         ArrayList<String> variables = SolutionMapping.getSolutionMapping().get(SolutionMapping.getIndice()-1);
 

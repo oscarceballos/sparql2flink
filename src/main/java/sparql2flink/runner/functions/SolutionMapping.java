@@ -34,10 +34,6 @@ public class SolutionMapping {
 		return mapping.get(var);
 	}
 
-    //public <T> T callFriend(String name){
-    //    return (T) mapping.get(name).getLiteralValue();
-    //}
-
 	public boolean existMapping(String var, Node val){
 		Boolean flag = false;
         if(mapping.containsKey(var)) {

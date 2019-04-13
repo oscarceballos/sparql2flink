@@ -39,30 +39,4 @@ public class T2SM_MF implements MapFunction<Triple, SolutionMapping> {
         }
         return sm;
     }
-
-    /*@Override
-    public SolutionMapping map(Triple t){
-        SolutionMapping sm = new SolutionMapping();
-        if(var_s!=null && var_p==null && var_o==null) {
-            sm.putMapping(var_s, t.getSubject());
-        } else if(var_s!=null && var_p!=null && var_o==null) {
-            sm.putMapping(var_s, t.getSubject());
-            sm.putMapping(var_p, t.getPredicate());
-        } else if(var_s!=null && var_p==null && var_o!=null) {
-            sm.putMapping(var_s, t.getSubject());
-            sm.putMapping(var_o, t.getObject());
-        } else if(var_s==null && var_p!=null && var_o==null) {
-            sm.putMapping(var_p, t.getPredicate());
-        } else if(var_s==null && var_p!=null && var_o!=null) {
-            sm.putMapping(var_p, t.getPredicate());
-            sm.putMapping(var_o, t.getObject());
-        } else if(var_s==null && var_p==null && var_o!=null) {
-            sm.putMapping(var_o, t.getObject());
-        } else {
-            sm.putMapping(var_s, t.getSubject());
-            sm.putMapping(var_p, t.getPredicate());
-            sm.putMapping(var_o, t.getObject());
-        }
-        return sm;
-    }*/
 }

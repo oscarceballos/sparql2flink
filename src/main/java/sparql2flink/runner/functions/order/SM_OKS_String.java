@@ -22,5 +22,4 @@ public class SM_OKS_String implements KeySelector<SolutionMapping, String> {
         }
         return value;
 	}
-
 }
