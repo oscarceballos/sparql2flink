@@ -1,4 +1,4 @@
-# sparql-to-flink
+# SPARQL2Flink
 
 An approach for transforming a given SPARQL query into an Apache Flink 1.7.2 Program for querying massive static RDF data. 
 
