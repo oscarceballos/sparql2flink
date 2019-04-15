@@ -15,7 +15,7 @@ mvn clean install compile package
 Run the Sparql2FLink java library with the name of the query file and the name of the input dataset
 
 ```
-java -cp target/sparql-to-flink-1.0-SNAPSHOT.jar org.univalle.rdf.Sparql2FLink examples/query.rq
+java -cp target/sparql2flink-1.0-SNAPSHOT.jar org.univalle.rdf.SPARQL2FLink examples/query.rq
 ```
 
 ## Create the Flink Program .jar to be runned on your Flink local cluster
@@ -23,5 +23,5 @@ java -cp target/sparql-to-flink-1.0-SNAPSHOT.jar org.univalle.rdf.Sparql2FLink e
 Deploy with maven using the configuration in pom_sparql2flink_jar.xml
 
 ```
-mvn -f pom_sparql2flink_jar.xml clean package
+mvn -f pom_query.xml clean package
 ```
