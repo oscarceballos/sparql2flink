@@ -107,8 +107,8 @@ public class ConvertTriplePattern {
             SolutionMapping.insertSolutionMapping(indice, null);
         }
 
-        filter_map += "\t\t\t.filter(new T2T_FF("+subject_filter+", "+predicate_filter+", "+object_filter+"))\n";
-        filter_map += "\t\t\t.map(new T2SM_MF("+subject_map+", "+predicate_map+", "+object_map+"));\n\n";
+        filter_map += "\t\t\t.filter(new Triple2Triple("+subject_filter+", "+predicate_filter+", "+object_filter+"))\n";
+        filter_map += "\t\t\t.map(new Triple2SolutionMapping("+subject_map+", "+predicate_map+", "+object_map+"));\n\n";
 
         return filter_map;
     }

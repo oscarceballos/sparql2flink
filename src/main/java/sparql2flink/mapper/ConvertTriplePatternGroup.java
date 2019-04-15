@@ -15,13 +15,13 @@ public class ConvertTriplePatternGroup {
         if(listKeys.size()>0) {
             String keys = JoinKeys.keys(listKeys);
             sm = "\t\tDataSet<SolutionMapping> sm" + indice_sm_join + " = sm" + indice_sm_left + ".join(sm" + indice_sm_right + ")\n" +
-                    "\t\t\t.where(new SM_JKS(new String[]{"+keys+"}))\n" +
-                    "\t\t\t.equalTo(new SM_JKS(new String[]{"+keys+"}))\n" +
-                    "\t\t\t.with(new SM_JF());" +
+                    "\t\t\t.where(new JoinKeySelector(new String[]{"+keys+"}))\n" +
+                    "\t\t\t.equalTo(new JoinKeySelector(new String[]{"+keys+"}))\n" +
+                    "\t\t\t.with(new Join());" +
                     "\n\n";
         } else {
             sm = "\t\tDataSet<SolutionMapping> sm" + indice_sm_join + " = sm" + indice_sm_left + ".cross(sm" + indice_sm_right + ")\n" +
-                    "\t\t\t.with(new SM_CF());" +
+                    "\t\t\t.with(new Cross());" +
                     "\n\n";
         }
         SolutionMapping.join(indice_sm_join, indice_sm_left, indice_sm_right);

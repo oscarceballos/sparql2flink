@@ -103,7 +103,7 @@ public class ConvertTriplePattern2 {
             SolutionMapping.insertSolutionMapping(indice, null);
         }
 
-        flatMap += "\t\t\t.flatMap(new T2SM_MF_2("+subject+", "+predicate+", "+object+"));\n\n";
+        flatMap += "\t\t\t.flatMap(new Triple2SolutionMapping2("+subject+", "+predicate+", "+object+"));\n\n";
 
         return flatMap;
     }
