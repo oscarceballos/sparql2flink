@@ -12,7 +12,7 @@ mvn clean install compile package
 
 ## Transform your SPARQL query to an Apache Flink Program
 
-Run the Sparql2FLink java library with the name of the query file and the name of the input dataset
+Run the sparql2fLink java library with the name of the query file and the name of the input dataset
 
 ```
 java -cp target/sparql2flink-1.0-SNAPSHOT.jar SPARQL2FLink examples/query.rq
