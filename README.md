@@ -1,8 +1,8 @@
-# sparql-to-flink
+# SPARQL2Flink library
 
 An approach for transforming a given SPARQL query into an Apache Flink 1.7.2 Program for querying massive static RDF data. 
 
-## Compile the Sparkql2Flink artifact
+## Compile the SPARQL2Flink artifact
 
 Deploy with maven usign the configuration in pom.xml
 
@@ -18,7 +18,7 @@ Run the Sparql2FLink java library with the name of the query file and the name o
 java -cp target/sparql-to-flink-1.0-SNAPSHOT.jar org.univalle.rdf.Sparql2FLink examples/query.rq
 ```
 
-## Create the Flink Program .jar to be runned on your Flink cluster
+## Create the Flink Program .jar to be runned on your Flink local cluster
 
 Deploy with maven using the configuration in pom_sparql2flink_jar.xml
 
