@@ -28,7 +28,7 @@ public class LogicalQueryPlan2FlinkProgram {
                 "import org.apache.jena.graph.Node;\n" +
                 "import org.apache.jena.graph.Triple;\n" +
                 "import sparql2flink.runner.functions.*;\n" +
-                "import sparql2flink.runner.TransformTriples;\n" +
+                "import sparql2flink.runner.LoadTriples;\n" +
                 "import sparql2flink.runner.functions.order.*;\n" +
                 "import java.math.*;\n" +
                 "\npublic class "+className+" {\n" +
@@ -39,7 +39,7 @@ public class LogicalQueryPlan2FlinkProgram {
                 "\t\t}\n\n" +
                 "\t\t//************ Environment (DataSet) and Source (static RDF dataset) ************\n" +
                 "\t\tfinal ExecutionEnvironment env = ExecutionEnvironment.getExecutionEnvironment();\n" +
-                "\t\tDataSet<Triple> dataset = TransformTriples.loadTriplesFromDataset(env, params.get(\"dataset\"));\n\n" +
+                "\t\tDataSet<Triple> dataset = LoadTriples.fromDataset(env, params.get(\"dataset\"));\n\n" +
                 "\t\t//************ Applying Transformations ************\n";
 
         logicalQueryPlan.visit(new ConvertLQP2FlinkProgram());

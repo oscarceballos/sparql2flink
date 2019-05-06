@@ -8,7 +8,7 @@ import org.apache.flink.core.fs.FileSystem;
 import org.apache.jena.graph.Node;
 import org.apache.jena.graph.Triple;
 import sparql2flink.runner.functions.*;
-import sparql2flink.runner.TransformTriples;
+import sparql2flink.runner.LoadTriples;
 import sparql2flink.runner.functions.order.*;
 import java.math.*;
 
@@ -23,21 +23,24 @@ public class Query {
 
 		//************ Environment (DataSet) and Source (static RDF dataset) ************
 		final ExecutionEnvironment env = ExecutionEnvironment.getExecutionEnvironment();
-		DataSet<Triple> dataset = TransformTriples.loadTriplesFromDataset(env, params.get("dataset"));
+		DataSet<Triple> dataset = LoadTriples.fromDataset(env, params.get("dataset"));
 
 		//************ Applying Transformations ************
 		DataSet<SolutionMapping> sm1 = dataset
-			.filter(new Triple2Triple("http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/ProductFeature107", null, null))
-			.map(new Triple2SolutionMapping(null, "?property", "?hasValue"));
+			.filter(new Triple2Triple(null, "http://www.w3.org/2000/01/rdf-schema#label", null))
+			.map(new Triple2SolutionMapping("?product", null, "?label"));
 
 		DataSet<SolutionMapping> sm2 = dataset
-			.filter(new Triple2Triple(null, null, "http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/ProductFeature107"))
-			.map(new Triple2SolutionMapping("?isValueOf", "?property", null));
+			.filter(new Triple2Triple(null, "http://www.w3.org/1999/02/22-rdf-syntax-ns#type", "http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/ProductType17"))
+			.map(new Triple2SolutionMapping("?product", null, null));
 
-		DataSet<SolutionMapping> sm3 = sm1.union(sm2);
+		DataSet<SolutionMapping> sm3 = sm1.join(sm2)
+			.where(new JoinKeySelector(new String[]{"?product"}))
+			.equalTo(new JoinKeySelector(new String[]{"?product"}))
+			.with(new Join());
 
 		DataSet<SolutionMapping> sm4 = sm3
-			.map(new Project(new String[]{"?property", "?hasValue", "?isValueOf"}));
+			.map(new Project(new String[]{"?product", "?label"}));
 
 		DataSet<SolutionMapping> sm5 = sm4
 			.distinct(new DistinctKeySelector());

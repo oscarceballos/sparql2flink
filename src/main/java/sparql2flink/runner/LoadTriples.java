@@ -7,9 +7,9 @@ import org.apache.flink.util.Preconditions;
 import org.apache.jena.graph.Triple;
 
 
-public class TransformTriples {
+public class LoadTriples {
 
-	public static DataSet<Triple> loadTriplesFromDataset(ExecutionEnvironment environment, String filePath) {
+	public static DataSet<Triple> fromDataset(ExecutionEnvironment environment, String filePath) {
 		Preconditions.checkNotNull(filePath, "The file path may not be null.");
 
         DataSource<String> dataSource = environment.readTextFile(filePath);
