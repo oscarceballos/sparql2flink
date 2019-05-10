@@ -2,6 +2,11 @@
 
 An approach for transforming a given SPARQL query into an Apache Flink 1.7.2 Program for querying massive static RDF data. 
 
+## System requirements
+
+* Oracle JDK 1.8
+* Maven 3.0 or higher
+
 ## Compile the SPARQL2Flink artifact
 
 Deploy with maven usign the configuration in pom.xml
