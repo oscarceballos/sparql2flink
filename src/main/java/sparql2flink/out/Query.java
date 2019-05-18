@@ -27,20 +27,17 @@ public class Query {
 
 		//************ Applying Transformations ************
 		DataSet<SolutionMapping> sm1 = dataset
-			.filter(new Triple2Triple(null, "http://www.w3.org/2000/01/rdf-schema#label", null))
-			.map(new Triple2SolutionMapping("?product", null, "?label"));
+			.filter(new Triple2Triple("http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/ProductFeature104", null, null))
+			.map(new Triple2SolutionMapping(null, "?property", "?hasValue"));
 
 		DataSet<SolutionMapping> sm2 = dataset
-			.filter(new Triple2Triple(null, "http://www.w3.org/1999/02/22-rdf-syntax-ns#type", "http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/ProductType17"))
-			.map(new Triple2SolutionMapping("?product", null, null));
+			.filter(new Triple2Triple(null, null, "http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/ProductFeature104"))
+			.map(new Triple2SolutionMapping("?isValueOf", "?property", null));
 
-		DataSet<SolutionMapping> sm3 = sm1.join(sm2)
-			.where(new JoinKeySelector(new String[]{"?product"}))
-			.equalTo(new JoinKeySelector(new String[]{"?product"}))
-			.with(new Join());
+		DataSet<SolutionMapping> sm3 = sm1.union(sm2);
 
 		DataSet<SolutionMapping> sm4 = sm3
-			.map(new Project(new String[]{"?product", "?label"}));
+			.map(new Project(new String[]{"?property", "?hasValue", "?isValueOf"}));
 
 		DataSet<SolutionMapping> sm5 = sm4
 			.distinct(new DistinctKeySelector());

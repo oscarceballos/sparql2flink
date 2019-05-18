@@ -188,12 +188,11 @@ public class ConvertLQP2FlinkProgram extends OpVisitorBase {
 
         Expr expression = sortCondition.get(0).getExpression();
 
-        flinkProgram += "\t\tDataSet<SolutionMapping> sm"+SolutionMapping.getIndice()+" = sm"+(SolutionMapping.getIndice()-1)+"\n" +
+        /*flinkProgram += "\t\tDataSet<SolutionMapping> sm"+SolutionMapping.getIndice()+" = sm"+(SolutionMapping.getIndice()-1)+"\n" +
                 "\t\t\t\t\t.sortPartition(new OrderKeySelector(\""+expression+"\"), "+order+")\n" +
                 "\t\t\t\t\t.setParallelism(1);\n" +
-                "\t\n";
+                "\t\n";*/
 
-        /*
         flinkProgram += "\t\tDataSet<SolutionMapping> sm"+SolutionMapping.getIndice()+";\n" +
                 "\t\tNode node = sm"+(SolutionMapping.getIndice()-1)+".collect().get(0).getValue(\""+expression+"\");\n" +
                 "\t\tif(node.isLiteral()) {\n" +
@@ -223,7 +222,7 @@ public class ConvertLQP2FlinkProgram extends OpVisitorBase {
                 "\t\t\t\t\t.sortPartition(new OrderKeySelector_String(\""+expression+"\"), "+order+")\n" +
                 "\t\t\t\t\t.setParallelism(1);\n" +
                 "\t\t}\n\n";
-        */
+
 
         ArrayList<String> variables = SolutionMapping.getSolutionMapping().get(SolutionMapping.getIndice()-1);
 
