@@ -1,7 +1,8 @@
 .idea
-.DS_Store
+**/.DS_Store
 **.DS_Store
-node_modules
-target
-out/*
+**/target/
+**/out/
 *.log
+**/cache/
+**/datasets/
