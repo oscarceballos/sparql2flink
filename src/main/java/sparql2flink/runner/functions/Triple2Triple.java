@@ -31,16 +31,19 @@ public class Triple2Triple implements FilterFunction<Triple> {
 
     @Override
     public boolean filter(Triple t) {
+        //System.out.println(subject + " -- " + predicate + " -- " + object);
+        //System.out.print("Triple t :"+t.toString()+"\t\t");
         if(subject==null && predicate!=null && object!=null) {
             return (t.getPredicate().toString().equals(predicate) && evalObject(t.getObject()));
         } else if(subject!=null && predicate==null && object!=null) {
-            return t.getSubject().toString().equals(subject) && evalObject(t.getObject());
+            return (t.getSubject().toString().equals(subject) && evalObject(t.getObject()));
         } else if(subject!=null && predicate!=null && object==null) {
-            return t.getSubject().toString().equals(subject) && t.getPredicate().toString().equals(predicate);
+            return (t.getSubject().toString().equals(subject) && t.getPredicate().toString().equals(predicate));
         } else if(subject!=null && predicate==null && object==null) {
-            return t.getSubject().toString().equals(subject);
+            return (t.getSubject().toString().equals(subject));
         } else if(subject==null && predicate!=null && object==null) {
-            return t.getPredicate().toString().equals(predicate);
+            //System.out.println("(t.getPredicate().toString().equals(predicate)): "+t.getPredicate().toString() +" == "+ predicate);
+            return (t.getPredicate().toString().equals(predicate));
         } else if(subject==null && predicate==null && object!=null) {
             return evalObject(t.getObject());
         } else {
