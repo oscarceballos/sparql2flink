@@ -2,7 +2,7 @@
 
 According to Apache Flink [Carbone et al., 2015], a Flink program usually consists on four basic stages: i) loading/creating the initial data, ii) specifying the transformations of the data, iii) specifying where to put the results of the computations, and iv) triggering the program execution. The SPARQL2Flink library –available on Github under the MIT license, is focused on the first three stages of a Flink program, and it is composed of two modules, called: Mapper and Runner, as shown in Figure 1. 
 
-![Image text](/images/bsbm-queries-batch.png)
+![Image text](/examples/sparql2flink.png)
 
 The Mapper module allows the transformation of a SPARQL query to a DataSet Flink program. The Runner module enables the execution of a Flink program (previously compiled and packaged as a .jar file) and solves the SPARQL query. A particularity of the Java library is that it allows to transformation and process of SPARQL queries of type start and path (or chain). Apache Jena ARQ and Apache Flink libraries are shared among both modules. 
 
