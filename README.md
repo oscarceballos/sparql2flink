@@ -106,4 +106,4 @@ mvn -f pom_query.xml clean package
 ## References
 Carbone, P., Katsifodimos, A., Ewen, S., Markl, V., Haridi, S., and Tzoumas, K. (2015). Apache flink: Stream and batch processing in a single engine. IEEE Data Eng. Bull., 38(4):28–38
 
-Apache-Jena (2011). Sparql syntax expression. https://jena.apache.org/documentation/notes/sse. html. Apache Software Fundation. [Online; accessed November 21, 2017]. 
+Apache-Jena (2011). Sparql syntax expression. (https://jena.apache.org/documentation/notes/sse.html). Apache Software Fundation. [Online; accessed November 21, 2017]. 
