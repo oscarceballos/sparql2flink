@@ -64,16 +64,6 @@ public class SolutionMapping {
         return this;
     }
 
-	public SolutionMapping newSolutionMapping(String[] vars){
-		SolutionMapping sm = new SolutionMapping();
-		for (String var : vars) {
-            if(var != null) {
-                sm.putMapping(var, mapping.get(var));
-            }
-		}
-		return sm;
-	}
-
     public SolutionMapping project(String[] vars){
         SolutionMapping sm = new SolutionMapping();
         for (String var : vars) {
@@ -98,6 +88,16 @@ public class SolutionMapping {
         }
         return sm;
 	}
+
+    public SolutionMapping newSolutionMapping(String[] vars){
+        SolutionMapping sm = new SolutionMapping();
+        for (String var : vars) {
+            if(var != null) {
+                sm.putMapping(var, mapping.get(var));
+            }
+        }
+        return sm;
+    }
 
 	@Override
 	public String toString() {
